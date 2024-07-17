@@ -3,7 +3,7 @@
 namespace TrainStationsRepo.API.Controllers;
 
 public record RoutePoints(
-    List<string> stations
+    List<int> stations
 );
 
 [Route("/")]

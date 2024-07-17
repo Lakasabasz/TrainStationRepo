@@ -22,8 +22,8 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapControllers();
-
 var instance = World.Instance;
+
+app.MapControllers();
 
 app.Run();
