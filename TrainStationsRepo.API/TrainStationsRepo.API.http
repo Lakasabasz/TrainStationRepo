@@ -1,6 +1,6 @@
 @WebApplication1_HostAddress = http://localhost:5065
 
-GET {{WebApplication1_HostAddress}}/stations?query=Kołob
+GET {{WebApplication1_HostAddress}}/stations?query=Bielsko
 Accept: application/json
 
 ###
@@ -11,7 +11,7 @@ Content-Type: application/json
 
 {
   "stations": [
-    "JhnQUof5VUeATR1WlCbihw==",
-    "pLgcYJZUEkO3jIQCmqWbFQ=="
+    3925,
+    1842
   ]
 }
