@@ -14,7 +14,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(
-    options => options.AddPolicy(name: "allowall", policyBuilder => policyBuilder.WithOrigins("*")));
+    options => options.AddPolicy(name: "allowall", policyBuilder =>
+    {
+        policyBuilder.WithOrigins("*");
+        policyBuilder.WithHeaders("*");
+    }));
 
 builder.Logging.ClearProviders();
 builder.Services.AddSerilog(new LoggerConfiguration()
