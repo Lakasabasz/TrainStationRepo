@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TrainStationsRepo.API.Models;
 
 namespace TrainStationsRepo.API.Controllers;
 
@@ -34,7 +35,7 @@ public class MainController : Controller
     public IActionResult AlternativeRoutes([FromBody] RoutePoints request)
     {
         if (request.stations[0] == request.stations[^1])
-            return BadRequest(new { error = "Start and end cannot be the same", ecc = 1 });
+            return BadRequest(new ErrorModel("Start and end cannot be the same", ErrorCodes.StartSameAsEnd));
         try
         {
             List<List<Post>> routes = World.Instance.GetAlternatives(request.stations.First(), request.stations.Last());
@@ -42,11 +43,17 @@ public class MainController : Controller
         }
         catch (InvalidOperationException)
         {
-            return BadRequest(new { error = "Start or end id is invalid", ecc = 2 });
+            return BadRequest(new ErrorModel("Start or end id is invalid", ErrorCodes.StationsIdInvalid));
         }
         catch (Exception)
         {
             return BadRequest(new { error = "SWW", ecc = 69 });
         }
+    }
+
+    [HttpGet("stations/all")]
+    public IActionResult StationsAll()
+    {
+        return Ok(new Stations(World.Instance.Posts.Select(x => new Station(x.Id, x.Name, x.Type))));
     }
 }
