@@ -10,6 +10,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(
+    options => options.AddPolicy(name: "allowall", policyBuilder => policyBuilder.WithOrigins("*")));
+
 builder.Logging.ClearProviders();
 builder.Services.AddSerilog(new LoggerConfiguration()
     .WriteTo.Console()
@@ -26,9 +29,15 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors("allowall");
+
 app.UseAuthorization();
 
+app.Logger.Log(LogLevel.Information, "Init world");
+
 var instance = World.Instance;
+
+app.Logger.Log(LogLevel.Information, "Loading complete");
 
 app.MapControllers();
 
