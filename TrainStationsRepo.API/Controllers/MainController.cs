@@ -7,6 +7,7 @@ public record RoutePoints(
 );
 
 [Route("/")]
+[Route("/api")]
 [ApiController]
 public class MainController : Controller
 {
@@ -21,7 +22,7 @@ public class MainController : Controller
     {
         query = string.IsNullOrWhiteSpace(query) ? "" : query;
         var result = World.Instance.Posts
-            .Where(x => $"{x.Name} {x.Type}".Contains(query))
+            .Where(x => $"{x.Name} {x.Type}".Contains(query, StringComparison.InvariantCultureIgnoreCase))
             .Select(x => new { x.Id, x.Name, Discriminant = x.Type })
             .OrderBy(x => x.Name).ThenBy(x => x.Discriminant)
             .Take(10).ToList();
@@ -29,6 +30,7 @@ public class MainController : Controller
     }
 
     [HttpGet("route")]
+    [HttpPost("route")]
     public IActionResult AlternativeRoutes([FromBody] RoutePoints request)
     {
         if (request.stations[0] == request.stations[^1])

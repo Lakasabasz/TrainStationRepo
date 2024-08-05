@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainStationsRepo.API", "TrainStationsRepo.API\TrainStationsRepo.API.csproj", "{D7E2B24F-4EDE-4B4F-ABDC-85BB824733A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonDataCompressor", "JsonDataCompressor\JsonDataCompressor.csproj", "{66CD5CF5-4C11-4CE1-B9D3-18E2BFD0D707}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonDataCompressor.Binnary", "JsonDataCompressor.Binnary\JsonDataCompressor.Binnary.csproj", "{FB415E93-66FC-477B-849D-2E1F152907C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{D7E2B24F-4EDE-4B4F-ABDC-85BB824733A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7E2B24F-4EDE-4B4F-ABDC-85BB824733A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7E2B24F-4EDE-4B4F-ABDC-85BB824733A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66CD5CF5-4C11-4CE1-B9D3-18E2BFD0D707}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66CD5CF5-4C11-4CE1-B9D3-18E2BFD0D707}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66CD5CF5-4C11-4CE1-B9D3-18E2BFD0D707}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66CD5CF5-4C11-4CE1-B9D3-18E2BFD0D707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB415E93-66FC-477B-849D-2E1F152907C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB415E93-66FC-477B-849D-2E1F152907C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB415E93-66FC-477B-849D-2E1F152907C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB415E93-66FC-477B-849D-2E1F152907C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
